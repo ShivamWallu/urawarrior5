@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query and Response</title>
+</head>
+<body>
+    <h1>Query and Response</h1>
+    <form id="queryForm">
+        <label for="query">Enter your query:</label>
+        <input type="text" id="query" name="query" required>
+        <button type="button" onclick="askAI()">Submit</button>
+    </form>
+    <div id="response"></div>
+
+    <script>
+        function askAI() {
+            var query = document.getElementById('query').value;
+
+            fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ query: query })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').innerHTML = '<p><strong>Response:</strong> ' + data.response + '</p>';
+            });
+        }
+    </script>
+</body>
+</html>

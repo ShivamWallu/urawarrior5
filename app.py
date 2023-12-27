@@ -41,15 +41,6 @@ def get_response(query):
 def index():
     return render_template('index.html')
 
-# def ask_ai():
-#     index = GPTSimpleVectorIndex.load_from_disk('index.json')
-#     while True:
-#         query = input("Hi, whatever is on your mind, i'm here to help, just ask away : ")
-#         response = index.query(query)
-#         print(f"Response: {response.response}")
-
-#         display(Markdown(f"Response: <b>{response.response}</b>"))
-
 @app.route('/ask', methods=['POST'])
 def ask_ai():
     data = request.get_json()
@@ -57,13 +48,10 @@ def ask_ai():
     response = get_response(query)
     return jsonify({"response": response})
 
-# os.environ["OPENAI_API_KEY"] = "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"
-# construct_index("Context")        
-# ask_ai()
 
 if __name__ == '__main__':
     # Set your OpenAI API key
-    os.environ["OPENAI_API_KEY"] = "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"
+    os.environ["OPENAI_API_KEY"] = "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"
 
     # Construct the index
     construct_index("Context")

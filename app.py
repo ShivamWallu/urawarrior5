@@ -51,10 +51,10 @@ def ask_ai():
 
 if __name__ == '__main__':
     # Set your OpenAI API key
-    os.environ["OPENAI_API_KEY"] = "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"
+    os.environ["OPENAI_API_KEY"] = "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"
 
     # Construct the index
     construct_index("Context")
 
     # Run the Flask app
-    app.run(host='0.0.0.0', port=8501, debug=False)
+    app.run(host='0.0.0.0', port=80, debug=False)

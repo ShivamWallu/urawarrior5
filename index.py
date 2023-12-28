@@ -51,7 +51,7 @@ def ask_ai():
 
 if __name__ == '__main__':
     # Set your OpenAI API key
-    os.environ["OPENAI_API_KEY"] = "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"
+    os.environ["OPENAI_API_KEY"] = "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"
 
     # Construct the index
     construct_index("Context")
